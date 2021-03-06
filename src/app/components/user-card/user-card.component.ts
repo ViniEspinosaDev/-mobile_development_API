@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-user-card',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCardComponent implements OnInit {
 
-  constructor() { }
+  public user: any = {
+    name: "",
+    picture: "https://placehold.it/200"
+  };
+
+  constructor(private afAuth: AngularFireAuth) { }
 
   ngOnInit(): void {
+    this.afAuth.user.subscribe(data => {
+      this.user.name = data?.displayName;
+      this.user.picture = data?.photoURL;
+    });
   }
 
+  logout() {
+    this.afAuth.signOut();
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todo-3b201": {
+      "hosting": {
+        "TodoWeb": [
+          "todo-3b201"
+        ]
+      }
+    }
+  }
+}
