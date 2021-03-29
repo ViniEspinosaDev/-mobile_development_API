@@ -1,20 +1,20 @@
-<form>
-  <h1>Nova tarefa</h1>
+<form [formGroup]="form">
+  <h2>Nova tarefa</h2>
   <br>
-  <textarea cols="30" rows="2" placeholder="ex: Tomar remédio as 20hrs"></textarea>
-  <small class="error">
+  <textarea cols="30" rows="2" placeholder="ex: Tomar remédio as 20hrs" formControlName="titulo"></textarea>
+  <small class="error" *ngIf="form.controls.title.invalid">
     <strong>Tarefa inválida</strong>
   </small>
   <br>
-  <h1>Data</h1>
-  <input type="date">
-  <small class="error">
+  <h2>Data</h2>
+  <input type="date" formControlName="data">
+  <small class="error" *ngIf="form.controls.date.invalid">
     <strong>Data inválida</strong>
   </small>
   <br>
   <br>
   <p class="text-right">
-    <app-button>
+    <app-button (click)="submit()" [disabled]="form.invalid">
       <i class="fa fa-save"></i>
       Criar
     </app-button>
