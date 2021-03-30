@@ -2,13 +2,13 @@
   <h2>Nova tarefa</h2>
   <br>
   <textarea cols="30" rows="2" placeholder="ex: Tomar remédio as 20hrs" formControlName="titulo"></textarea>
-  <small class="error" *ngIf="form.controls.title.invalid">
+  <small class="error" *ngIf="form.controls.titulo.invalid">
     <strong>Tarefa inválida</strong>
   </small>
   <br>
   <h2>Data</h2>
   <input type="date" formControlName="data">
-  <small class="error" *ngIf="form.controls.date.invalid">
+  <small class="error" *ngIf="form.controls.data.invalid">
     <strong>Data inválida</strong>
   </small>
   <br>
