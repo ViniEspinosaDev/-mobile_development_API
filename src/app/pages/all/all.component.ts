@@ -20,5 +20,4 @@ export class AllComponent implements OnInit {
       this.service.getAllTodos(token).subscribe((data: any) => this.todos = data);
     });
   }
-
 }

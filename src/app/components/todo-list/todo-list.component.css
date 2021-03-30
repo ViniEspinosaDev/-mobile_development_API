@@ -48,7 +48,7 @@
   font-size: 0.6em;
 }
 
-.todo .done {
+.todos .done {
   text-decoration: line-through;
   opacity: 0.5;
 }
